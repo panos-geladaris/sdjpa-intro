@@ -15,6 +15,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+
     private String title;
     private String isbn;
     private String publisher;
@@ -60,4 +65,15 @@ public class Book {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Book book = (Book) o;
+
+        return id.equals(book.id);
+    }
+
 }
