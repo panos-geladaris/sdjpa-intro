@@ -3,7 +3,10 @@ package guru.springframework.sdjpaintro.bootstrap;
 import guru.springframework.sdjpaintro.domain.Book;
 import guru.springframework.sdjpaintro.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class DataInitialiser implements CommandLineRunner {
     private final BookRepository bookRepository;
 
